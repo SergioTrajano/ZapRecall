@@ -14,10 +14,10 @@ export default function Quest({ state, question, answer, side, color, cont, resu
         setState(!state);
         setColor(color);
         setResults([...results, type]);
-        if (type === Check || type === Mark) setCont(cont + 1);
+        if (type === Check) setCont(cont + 1);
         if (results.length === quant - 1) {
             setDisplay("flex");
-            setMargi("170px")
+            setMargi("220px")
         }
     }
 

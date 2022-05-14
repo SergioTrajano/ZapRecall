@@ -5,7 +5,14 @@ import Sad from "../assets/sad.png"
 
 import Question from "./Question"
 
-export default function Recall ({ setRecall }) {
+function shuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+    let j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+}
+
+export default function Recall ({ goal, setRecall }) {
 
     const questions = [
         {
@@ -45,17 +52,19 @@ export default function Recall ({ setRecall }) {
     const [cont, setCont] = React.useState(0);
     const [results, setResults] = React.useState([]);
     const [display, setDisplay] = React.useState("none");
-    const [margi, setMargi] = React.useState("70px");
+    const [margi, setMargi] = React.useState("90px");
+
+    shuffle(questions);
 
     return (
         <>
-            <div className="recall">
+            <div style={{marginBottom: margi }} className="recall">
                 <div className="banner">
                     <img src={Logo} alt="Logo" />
                     <h1>ZapRecall</h1>
                 </div>
 
-                <ul style={{marginBottom: margi }}>
+                <ul>
 
                     {questions.map((q, i) => <Question question={q.question}  answer={q.answer} index={i} cont={cont} results={results} quant={questions.length} setCont={setCont} setResults={setResults} setDisplay={setDisplay} setMargi={setMargi} />)}
 
@@ -64,14 +73,14 @@ export default function Recall ({ setRecall }) {
             <div className="bottom">
                 <div style={{display: display}} className="end">
                     <div>
-                        <img src={cont === questions.length ? Party : Sad } alt="Emote" />
+                        <img src={cont >= goal ? Party : Sad } alt="Emote" />
                         <p>
-                            {cont === questions.length ? "Parabéns" : "Putz..."}
+                            {cont >= goal ? "Parabéns" : "Putz..."}
                         </p>
                     </div>
                     <div>
                         <p>
-                            {cont === questions.length ? "Você não esqueceu de nenhum flashcard!" : "Ainda faltam alguns... Mas não desanime!" }
+                            {cont >= goal ? "Você atingiu ua meta de Zaps!" : "Você não atingiu sua meta de Zaps!" }
                         </p>
                     </div>
                 </div>
