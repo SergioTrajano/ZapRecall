@@ -5,7 +5,7 @@ import Sad from "../assets/sad.png"
 
 import Question from "./Question"
 
-export default function Recall () {
+export default function Recall ({ setRecall }) {
 
     const questions = [
         {
@@ -82,6 +82,9 @@ export default function Recall () {
                     <div>
                         {results.map(t => <img src={t} alt="" />)}
                     </div>
+                </div>
+                <div style={{display: display}} onClick={() => setRecall(false)}>
+                    REINICIAR RECALL
                 </div>
             </div>
         </>

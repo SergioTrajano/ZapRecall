@@ -8,12 +8,11 @@ import Recall from "./Recall"
 
 export default function App() {
 
-    const [display, setDisplay] = React.useState(false);
+    const [recall, setRecall] = React.useState(false);
+
     return (
-
         <>
-            {!display ? <Initial setDisplay={setDisplay} /> : <Recall />}
-        </>  
-
-    )
+            {!recall ? <Initial setRecall={setRecall} /> : <Recall setRecall={setRecall} />}
+        </>
+    );
 }
