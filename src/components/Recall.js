@@ -1,4 +1,7 @@
+import React from "react";
 import Logo from "../assets/logo-pequeno.png"
+import Party from "../assets/party.png"
+import Sad from "../assets/sad.png"
 
 import Question from "./Question"
 
@@ -14,30 +17,33 @@ export default function Recall () {
             answer: "uma biblioteca JavaScript para construção de interfaces"
         },
         {
-            question: "Componentes devem iniciar com __",
+            question: "Componentes devem iniciar com ___",
             answer: "letra maiúscula"
         },
         {
-            question: "Podemos colocar __ dentro do JSX.",
+            question: "Podemos colocar ___ dentro do JSX.",
             answer: "expressões"
         },
         {
-            question: "O ReactDOM nos ajuda __.",
+            question: "O ReactDOM nos ajuda ___.",
             answer: "interagindo com a DOM para colocar componentes React na mesma"
         },
         {
-            question: "Usamos o npm para __.",
+            question: "Usamos o npm para ___.",
             answer: "gerenciar os pacotes necessários e suas dependências"
         },
         {
-            question: "Usamos props para __.",
+            question: "Usamos props para ___.",
             answer: "passar diferentes informações para componentes"
         },
         {
-            question: "Usamos estado (state) para __.",
+            question: "Usamos estado (state) para ___.",
             answer: "dizer para o React quais informações quando atualizadas devem renderizar a tela novamente"
         }
-    ]
+    ];
+
+    const [cont, setCont] = React.useState(0);
+    const [results, setResults] = React.useState([]);
 
     return (
 
@@ -49,10 +55,29 @@ export default function Recall () {
 
             <ul>
 
-                {questions.map((q, i) => <Question question={q.question}  answer={q.answer} index={i} />)}
+                {questions.map((q, i) => <Question question={q.question}  answer={q.answer} index={i} cont={cont} results={results} setCont={setCont} setResults={setResults} />)}
 
             </ul>
-        </div>
 
+            <div className="bottom">
+                <div className="end">
+                    <div>
+                        <img src={cont === questions.length ? Party : Sad } alt="Emote" />
+                        <p>
+                            {cont === questions.length ? "Você não esqueceu de nenhum flashcard!" : "Ainda faltam alguns... Mas não desanime!" }
+                        </p>
+                    </div>
+                    <div>
+                        <p>
+                            {cont}/{questions.length} CONCLUÍDOS
+                        </p>
+                        <div>
+                            {results.map(t => <img src={t} alt="" />)}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
     )
 }

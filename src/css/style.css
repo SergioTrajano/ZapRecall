@@ -65,7 +65,7 @@ body {
     width: 255px;
     display: flex;
     justify-content: space-between;
-    margin-bottom: 58px;
+    margin-bottom: 33px;
 }
 
 .recall .banner img {
@@ -82,7 +82,7 @@ body {
 
 li {
     font-family: 'Recursive', sans-serif;
-    margin-bottom: 25px;
+    margin: 25px 0;
     min-height: 65px;
     width: 300px;
 }
@@ -120,21 +120,23 @@ li .quest {
     justify-content: space-between;
 }
 
-li .quest img {
-    width: 30px;
-    height: 20px;
-}
-
 li .quest .container {
     display: flex;
+    flex-direction: row-reverse;
     justify-content: space-between;
     align-self: flex-end;
+    width: 100%;
+}
+
+li .quest .container img {
+    width: 30px;
+    height: 20px;
+    justify-self: flex-end;
 }
 
 li .quest .container .option {
     width: 85px;
     height: 37px;
-    
     display: flex;
     align-items: center;
     justify-content: center;
@@ -142,8 +144,11 @@ li .quest .container .option {
 }
 
 li .quest .container .option p {
-    max-width: 75px;
+    max-width: 65px;
+    word-wrap: break-word;
+    text-align: center;
     font-size: 12px;
     line-height: 14px;
     color: #FFFFFF;
+    font-weight: 600;
 }
