@@ -3,22 +3,31 @@ import React from "react"
 import Logo from "../assets/Logo.png"
 
 export default function Initial({ setRecall, setGoal }) {
-
+    
     let quantZaps = 0;
-    const [placeHolder, setPlaceHolder] = React.useState("Digite sua meta de zaps...");
+    const [message, setMessage] = React.useState("");
 
 
     const getValue = (event) => {
         quantZaps = event.target.value;
-        setGoal(quantZaps);
+        console.log(quantZaps);
+    }
+
+    function enableRecall(quant) {
+        if (quant > 0) {
+            setRecall(true);
+            setGoal(quant);
+        }
+        setMessage("A meta deve ser maior que 0!");
     }
 
     return (
         <div className="initial">
             <img src={Logo} alt="Logo" />
             <h1>ZapRecall</h1>
-            <input type="number" placeholder={placeHolder} onChange={getValue}></input>
-            <button onClick={() => quantZaps > 0 ? setRecall(true) : setPlaceHolder("Digite um número maior que 0!")} >Iniciar Recall!</button>
+            <p>{message}</p>
+            <input type="number" placeholder="Digite sua meta de zaps..." onChange={getValue} />
+            <button onClick={() => enableRecall(quantZaps)} >Iniciar Recall!</button>
         </div>
     )
 }

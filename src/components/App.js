@@ -13,7 +13,7 @@ export default function App() {
 
     return (
         <>
-            {!recall ? <Initial setRecall={setRecall} setGoal={setGoal} /> : <Recall goal={goal} setRecall={setRecall} />}
+            {!recall ? <Initial setRecall={setRecall} setGoal={setGoal} /> : <Recall setRecall={setRecall} goal={goal}/>}
         </>
     );
 }

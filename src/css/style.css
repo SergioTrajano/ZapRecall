@@ -42,6 +42,11 @@ body {
     margin-bottom: 38px;
 }
 
+.initial p {
+    font-size: 10px;
+    color: #FFFFFF;
+}
+
 .initial input {
     width: 246px;
     height: 43px;
