@@ -9,9 +9,12 @@ body {
 }
 
 .root {
-    width: 367px;
-    height: 667px;
     background-color: #FB6B6B;
+    min-width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .initial {
@@ -55,13 +58,14 @@ body {
     justify-content: center;
     align-items: center;
     width: 367px;
-    height: 667px;
     margin: 48px 38px 0 38px ;
 }
 
 .banner {
+    width: 255px;
     display: flex;
     justify-content: space-between;
+    margin-bottom: 58px;
 }
 
 .recall .banner img {
@@ -76,3 +80,70 @@ body {
     color: #FFFFFF;
 }
 
+li {
+    font-family: 'Recursive', sans-serif;
+    margin-bottom: 25px;
+    min-height: 65px;
+    width: 300px;
+}
+
+li .question-Number {
+    width: 300px;
+    height: 65px;
+    background-color: #FFFFFF;
+    font-size: 16px;
+    line-height: 19px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 15px;
+    border-radius: 5px;
+}
+
+li .question-Number img {
+    width: 20px;
+    height: 23px;
+}
+
+li .quest {
+    width: 300px;
+    height: 130px;
+    font-size: 18px;
+    line-height: 21.6px;
+    color: #333333;
+    background-color: #FFFFD4;
+    border-radius: 5px;
+    padding: 18px 15px 6px 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+li .quest img {
+    width: 30px;
+    height: 20px;
+}
+
+li .quest .container {
+    display: flex;
+    justify-content: space-between;
+    align-self: flex-end;
+}
+
+li .quest .container .option {
+    width: 85px;
+    height: 37px;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+}
+
+li .quest .container .option p {
+    max-width: 75px;
+    font-size: 12px;
+    line-height: 14px;
+    color: #FFFFFF;
+}
