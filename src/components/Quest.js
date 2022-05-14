@@ -3,9 +3,7 @@ import Mark from "../assets/mark.png"
 import Wrong from "../assets/X.png"
 import Setinha from "../assets/setinha.png"
 
-export default function Quest({ state, question, answer, side, color, cont, results, setState, setType, setSide, setColor, setCont, setResults}) {
-
-    
+export default function Quest({ state, question, answer, side, color, cont, results, quant, setState, setType, setSide, setColor, setCont, setResults, setDisplay }) {
 
     function toAnswer() {
         setSide(!side);
@@ -16,7 +14,8 @@ export default function Quest({ state, question, answer, side, color, cont, resu
         setState(!state);
         setColor(color);
         setResults([...results, type]);
-        if (type === Check) setCont(cont+1);
+        if (type === Check || type === Mark) setCont(cont + 1);
+        if (results.length === quant - 1) setDisplay("flex");
     }
 
     if (!side) {

@@ -44,40 +44,46 @@ export default function Recall () {
 
     const [cont, setCont] = React.useState(0);
     const [results, setResults] = React.useState([]);
+    const [display, setDisplay] = React.useState("none");
 
     return (
+        <>
+            <div className="recall">
+                <div className="banner">
+                    <img src={Logo} alt="Logo" />
+                    <h1>ZapRecall</h1>
+                </div>
 
-        <div className="recall">
-            <div className="banner">
-                <img src={Logo} alt="Logo" />
-                <h1>ZapRecall</h1>
+                <ul>
+
+                    {questions.map((q, i) => <Question question={q.question}  answer={q.answer} index={i} cont={cont} results={results} quant={questions.length} setCont={setCont} setResults={setResults} setDisplay={setDisplay} />)}
+
+                </ul>
             </div>
-
-            <ul>
-
-                {questions.map((q, i) => <Question question={q.question}  answer={q.answer} index={i} cont={cont} results={results} setCont={setCont} setResults={setResults} />)}
-
-            </ul>
-
             <div className="bottom">
-                <div className="end">
+                <div style={{display: display}} className="end">
                     <div>
                         <img src={cont === questions.length ? Party : Sad } alt="Emote" />
+                        <p>
+                            {cont === questions.length ? "Parabéns" : "Putz..."}
+                        </p>
+                    </div>
+                    <div>
                         <p>
                             {cont === questions.length ? "Você não esqueceu de nenhum flashcard!" : "Ainda faltam alguns... Mas não desanime!" }
                         </p>
                     </div>
+                </div>
+                <div className="progress">
+                    <p>
+                        {results.length}/{questions.length} CONCLUÍDOS
+                    </p>
                     <div>
-                        <p>
-                            {cont}/{questions.length} CONCLUÍDOS
-                        </p>
-                        <div>
-                            {results.map(t => <img src={t} alt="" />)}
-                        </div>
+                        {results.map(t => <img src={t} alt="" />)}
                     </div>
                 </div>
             </div>
-
-        </div>
+        </>
+        
     )
 }

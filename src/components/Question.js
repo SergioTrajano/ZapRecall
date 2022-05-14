@@ -5,7 +5,7 @@ import Play from "../assets/play.png"
 import QuestNumber from "./QuestNumber"
 import Quest from "./Quest"
 
-export default function Question({ question, answer, index, cont, results, setCont, setResults }) {
+export default function Question({ question, answer, index, cont, quant, results, setCont, setResults, setDisplay }) {
 
     const col = ["#FF3030", "#FF922E", "#2FBE34"];
 
@@ -17,7 +17,7 @@ export default function Question({ question, answer, index, cont, results, setCo
 
     return (
         <li key={index}>
-            {!state ? <QuestNumber state={state} setState={setState} side={side} i={index} type={type} color={color} /> : <Quest state={state} setState={setState} setType={setType} question={question} answer={answer} side={side} setSide={setSide} color={col} setColor={setColor} setCont={setCont} setResults={setResults} cont={cont} results={results}/>}
+            {!state ? <QuestNumber state={state} setState={setState} side={side} i={index} type={type} color={color} /> : <Quest state={state} setState={setState} setType={setType} question={question} answer={answer} side={side} quant={quant} setSide={setSide} color={col} setColor={setColor} setCont={setCont} setResults={setResults} cont={cont} results={results} setDisplay={setDisplay} />}
         </li>
     )
 }
