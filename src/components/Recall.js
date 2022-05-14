@@ -45,6 +45,7 @@ export default function Recall () {
     const [cont, setCont] = React.useState(0);
     const [results, setResults] = React.useState([]);
     const [display, setDisplay] = React.useState("none");
+    const [margi, setMargi] = React.useState("70px");
 
     return (
         <>
@@ -54,9 +55,9 @@ export default function Recall () {
                     <h1>ZapRecall</h1>
                 </div>
 
-                <ul>
+                <ul style={{marginBottom: margi }}>
 
-                    {questions.map((q, i) => <Question question={q.question}  answer={q.answer} index={i} cont={cont} results={results} quant={questions.length} setCont={setCont} setResults={setResults} setDisplay={setDisplay} />)}
+                    {questions.map((q, i) => <Question question={q.question}  answer={q.answer} index={i} cont={cont} results={results} quant={questions.length} setCont={setCont} setResults={setResults} setDisplay={setDisplay} setMargi={setMargi} />)}
 
                 </ul>
             </div>

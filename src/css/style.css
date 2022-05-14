@@ -164,6 +164,9 @@ body {
     background-color: #FFFFFF;
     color: #333333;
     padding-top: 10px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
 }
 
 .bottom img {
