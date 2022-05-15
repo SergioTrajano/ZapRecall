@@ -29,7 +29,7 @@ body {
 }
 
 .initial img {
-    width: 136px;
+    max-width: 136px;
     height: 161px;
 }
 
@@ -48,7 +48,8 @@ body {
 }
 
 .initial input {
-    width: 246px;
+    width: 100%;
+    max-width: 246px;
     height: 43px;
     background-color: #FFFFFF;
     font-family: 'Roboto', sans-serif; 
@@ -61,7 +62,8 @@ body {
 }
 
 .initial button {
-    width: 246px;
+    width: 100%;
+    max-width: 246px;
     height: 54px;
     background-color: #FFFFFF;
     border: 1px solid #D70900;
@@ -81,7 +83,8 @@ body {
 }
 
 .banner {
-    width: 255px;
+    width: 100%;
+    max-width: 255px;
     display: flex;
     justify-content: space-between;
     margin-bottom: 33px;
@@ -99,15 +102,22 @@ body {
     color: #FFFFFF;
 }
 
+.recall ul {
+    width: 100%;
+    max-width: 300px;
+}
+
 .recall li {
     font-family: 'Recursive', sans-serif;
     margin: 25px 0;
     min-height: 65px;
-    width: 300px;
+    width: 100%;
+    max-width: 300px;
 }
 
 .recall li .question-Number {
-    width: 300px;
+    width: 100%;
+    max-width: 300px;
     height: 65px;
     background-color: #FFFFFF;
     font-size: 16px;
@@ -126,7 +136,8 @@ body {
 }
 
 .recall li .quest {
-    width: 300px;
+    width: 100%;
+    max-width: 300px;
     min-height: 130px;
     font-size: 18px;
     line-height: 21.6px;
@@ -154,7 +165,8 @@ body {
 }
 
 .recall li .quest .container .option {
-    width: 85px;
+    width: 30%;
+    max-width: 85px;
     height: 37px;
     display: flex;
     align-items: center;
