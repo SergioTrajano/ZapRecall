@@ -10,7 +10,6 @@ export default function Initial({ setRecall, setGoal }) {
 
     const getValue = (event) => {
         quantZaps = event.target.value;
-        console.log(quantZaps);
     }
 
     function enableRecall(quant) {

@@ -66,7 +66,7 @@ export default function Recall ({ goal, setRecall }) {
 
                 <ul>
 
-                    {questions.map((q, i) => <Question question={q.question}  answer={q.answer} index={i} cont={cont} results={results} quant={questions.length} setCont={setCont} setResults={setResults} setDisplay={setDisplay} setMargi={setMargi} />)}
+                    {questions.map((q, i) => <Question key={i} question={q.question}  answer={q.answer} index={i} cont={cont} results={results} quant={questions.length} setCont={setCont} setResults={setResults} setDisplay={setDisplay} setMargi={setMargi} />)}
 
                 </ul>
             </div>
@@ -80,7 +80,7 @@ export default function Recall ({ goal, setRecall }) {
                     </div>
                     <div>
                         <p>
-                            {cont >= goal ? "Você atingiu ua meta de Zaps!" : "Você não atingiu sua meta de Zaps!" }
+                            {cont >= goal ? "Você atingiu sua meta de Zaps!" : "Você não atingiu sua meta de Zaps!" }
                         </p>
                     </div>
                 </div>

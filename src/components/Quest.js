@@ -3,7 +3,9 @@ import Mark from "../assets/mark.png"
 import Wrong from "../assets/X.png"
 import Setinha from "../assets/setinha.png"
 
-export default function Quest({ state, question, answer, side, color, cont, results, quant, setState, setType, setSide, setColor, setCont, setResults, setDisplay, setMargi }) {
+export default function Quest({ state, question, answer, side, cont, results, quant, setState, setType, setSide, setColor, setCont, setResults, setDisplay, setMargi }) {
+
+    const color = ["#FF3030", "#FF922E", "#2FBE34"];
 
     function toAnswer() {
         setSide(!side);
