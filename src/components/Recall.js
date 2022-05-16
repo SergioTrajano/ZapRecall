@@ -12,49 +12,14 @@ function shuffle(array) {
     }
 }
 
-export default function Recall ({ goal, setRecall }) {
-
-    const questions = [
-        {
-            question: "O que é JSX?",
-            answer: "Uma extensão de linguagem do JavaScript"
-        },
-        {
-            question: "O React é ___",
-            answer: "uma biblioteca JavaScript para construção de interfaces"
-        },
-        {
-            question: "Componentes devem iniciar com ___",
-            answer: "letra maiúscula"
-        },
-        {
-            question: "Podemos colocar ___ dentro do JSX.",
-            answer: "expressões"
-        },
-        {
-            question: "O ReactDOM nos ajuda ___.",
-            answer: "interagindo com a DOM para colocar componentes React na mesma"
-        },
-        {
-            question: "Usamos o npm para ___.",
-            answer: "gerenciar os pacotes necessários e suas dependências"
-        },
-        {
-            question: "Usamos props para ___.",
-            answer: "passar diferentes informações para componentes"
-        },
-        {
-            question: "Usamos estado (state) para ___.",
-            answer: "dizer para o React quais informações quando atualizadas devem renderizar a tela novamente"
-        }
-    ];
+export default function Recall ({ goal, deck, setRecall }) {
 
     const [cont, setCont] = React.useState(0);
     const [results, setResults] = React.useState([]);
     const [display, setDisplay] = React.useState("none");
     const [margi, setMargi] = React.useState("90px");
 
-    shuffle(questions);
+    shuffle(deck);
 
     return (
         <>
@@ -66,7 +31,7 @@ export default function Recall ({ goal, setRecall }) {
 
                 <ul>
 
-                    {questions.map((q, i) => <Question key={i} question={q.question}  answer={q.answer} index={i} cont={cont} results={results} quant={questions.length} setCont={setCont} setResults={setResults} setDisplay={setDisplay} setMargi={setMargi} />)}
+                    {deck.map((q, i) => <Question key={i} question={q.question}  answer={q.answer} index={i} cont={cont} results={results} quant={deck.length} setCont={setCont} setResults={setResults} setDisplay={setDisplay} setMargi={setMargi} />)}
 
                 </ul>
             </div>
@@ -86,10 +51,10 @@ export default function Recall ({ goal, setRecall }) {
                 </div>
                 <div className="progress">
                     <p>
-                        {results.length}/{questions.length} CONCLUÍDOS
+                        {results.length}/{deck.length} CONCLUÍDOS
                     </p>
                     <div>
-                        {results.map(t => <img src={t} alt="" />)}
+                        {results.map((t, i) => <img key={i} src={t} alt="" />)}
                     </div>
                 </div>
                 <div style={{display: display}} onClick={() => setRecall(false)}>

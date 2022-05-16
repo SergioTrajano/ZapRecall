@@ -43,8 +43,22 @@ body {
 }
 
 .initial p {
+    width: 100%;
+    max-width: 246px;
     font-size: 10px;
+    text-align: center;
     color: #FFFFFF;
+}
+
+.initial select {
+    width: 100%;
+    max-width: 246px;
+    height: 43px;
+    background-color: #FFFFFF;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    margin-bottom: 15px; 
+    text-align: center;
 }
 
 .initial input {
@@ -57,8 +71,8 @@ body {
     line-height: 16px;
     outline: 0;
     border-radius: 5px;
-    color: #ADADAD;
     margin-bottom: 18px;
+    text-align: center;
 }
 
 .initial button {
